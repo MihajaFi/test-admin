@@ -5,8 +5,10 @@ import {
   EditGuesser,
   ShowGuesser,
 } from "react-admin";
+import { Route } from "react-router-dom";
 import { dataProvider } from "./dataProvider";
 import CreatePost from "./posts/CreatePost";
+import ListComment from "./comment/ListComment";
 
 export const App = () => <Admin dataProvider={dataProvider}>
   <Resource 
@@ -21,7 +23,9 @@ export const App = () => <Admin dataProvider={dataProvider}>
   edit={EditGuesser}
   show={ShowGuesser}
   list={ListGuesser}
+  
   >
+    <Route path=":postId/comments" element={<ListComment />} />
   </Resource>
 
 </Admin>;
