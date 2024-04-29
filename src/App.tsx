@@ -9,6 +9,7 @@ import { Route } from "react-router-dom";
 import { dataProvider } from "./dataProvider";
 import CreatePost from "./posts/CreatePost";
 import ListComment from "./comment/ListComment";
+import ListPosts from "./posts/ListPosts";
 
 export const App = () => <Admin dataProvider={dataProvider}>
   <Resource 
@@ -22,7 +23,7 @@ export const App = () => <Admin dataProvider={dataProvider}>
   create={CreatePost}
   edit={EditGuesser}
   show={ShowGuesser}
-  list={ListGuesser}
+  list={ListPosts}
   
   >
     <Route path=":postId/comments" element={<ListComment />} />
